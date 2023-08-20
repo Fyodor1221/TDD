@@ -1,11 +1,9 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class PhoneBook {
-    private Map<String, String> contacts = new HashMap<>();
+    private NavigableMap<String, String> contacts = new TreeMap<>();
     public int add (String name, String number) {
         contacts.put(name, number);
         return contacts.size();
@@ -29,7 +27,9 @@ public class PhoneBook {
         return null;
     }
 
-    public ArrayList<String> printAllNames () {
-        return null;
+    public NavigableSet<String> printAllNames () {
+        NavigableSet<String> names = new TreeSet<>(contacts.navigableKeySet());
+        System.out.println(names);
+        return names;
     }
 }

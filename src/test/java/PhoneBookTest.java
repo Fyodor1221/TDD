@@ -2,8 +2,7 @@ import org.example.PhoneBook;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class PhoneBookTest {
     @Test
@@ -51,8 +50,8 @@ public class PhoneBookTest {
         phoneBook.add("Pavel", "00001");
         phoneBook.add("Sveta", "00002");
         phoneBook.add("Anton", "00003");
-        ArrayList<String> actual = phoneBook.printAllNames();
-        ArrayList<String> expected = new ArrayList<>(Arrays.asList("Anton", "Pavel", "Sveta"));
+        Set<String> actual = phoneBook.printAllNames();
+        NavigableSet<String> expected = new TreeSet<>(Arrays.asList("Anton", "Pavel", "Sveta"));
         Assertions.assertEquals(expected, actual);
     }
 }
