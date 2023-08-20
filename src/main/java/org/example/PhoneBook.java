@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,6 +26,10 @@ public class PhoneBook {
         if(contacts.containsKey(name)) {
             return contacts.get(name);
         }
+        return null;
+    }
+
+    public ArrayList<String> printAllNames () {
         return null;
     }
 }
